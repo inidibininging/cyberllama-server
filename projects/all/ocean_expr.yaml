@@ -1,0 +1,112 @@
+emotions:
+  - emotion: Neutral
+    ocean_traits: null
+    explanation: "Lack of strong emotional expression."
+    sentiment_value: 0
+
+  - emotion: Joy
+    ocean_traits:
+      - Extraversion
+      - Agreeableness
+    explanation: "Reflects positive engagement and sociability."
+    sentiment_value: 1
+
+  - emotion: Smile
+    ocean_traits:
+      - Extraversion
+      - Agreeableness
+    explanation: "Indicates friendliness and warmth."
+    sentiment_value: 1
+
+  - emotion: Sad
+    ocean_traits:
+      - Neuroticism
+    explanation: "Reflects emotional instability or low mood."
+    sentiment_value: -1
+
+  - emotion: Surprise
+    ocean_traits:
+      - Openness
+    explanation: "Indicates openness to new experiences."
+    sentiment_value: 1
+
+  - emotion: Aggressive
+    ocean_traits:
+      - Neuroticism
+    explanation: "May reflect emotional volatility or conflict."
+    sentiment_value: -1
+
+  - emotion: Anger
+    ocean_traits:
+      - Neuroticism
+    explanation: "Suggests frustration or emotional instability."
+    sentiment_value: -1
+
+  - emotion: Interested
+    ocean_traits:
+      - Openness
+      - Extraversion
+    explanation: "Engages curiosity or social engagement."
+    sentiment_value: 1
+
+  - emotion: Disinterested
+    ocean_traits: null
+    explanation: "Lack of engagement or interest."
+    sentiment_value: 0
+
+  - emotion: Disappointed
+    ocean_traits:
+      - Neuroticism
+    explanation: "Reflects emotional dissatisfaction."
+    sentiment_value: -1
+
+  - emotion: Disgust
+    ocean_traits:
+      - Neuroticism
+    explanation: "Indicates strong negative emotional response."
+    sentiment_value: -1
+
+  - emotion: Exertion
+    ocean_traits:
+      - Conscientiousness
+    explanation: "Could signify diligence or effort in tasks."
+    sentiment_value: 1
+
+  - emotion: Nervous
+    ocean_traits:
+      - Neuroticism
+    explanation: "Reflects anxiety or emotional instability."
+    sentiment_value: -1
+
+  - emotion: Fear
+    ocean_traits:
+      - Neuroticism
+    explanation: "Indicates apprehension and emotional instability."
+    sentiment_value: -1
+
+  - emotion: Terrified
+    ocean_traits:
+      - Neuroticism
+    explanation: "Extreme emotional instability or anxiety."
+    sentiment_value: -1
+
+  - emotion: Pain
+    ocean_traits:
+      - Neuroticism
+    explanation: "Indicates distress, associated with instability."
+    sentiment_value: -1
+
+  - emotion: Sleepy
+    ocean_traits: null
+    explanation: "Lack of engagement, possibly indicating low energy."
+    sentiment_value: 0
+
+  - emotion: Unconscious
+    ocean_traits: null
+    explanation: "Absence of emotional expression or awareness."
+    sentiment_value: 0
+
+  - emotion: Dead
+    ocean_traits: null
+    explanation: "No emotional expression; lack of engagement."
+    sentiment_value: 0

@@ -1,0 +1,50 @@
+name: skippy
+
+# this is used for matching inside the current character
+# this is the name the script looks for
+identifiers:
+  - skippy
+
+# which property of world data should be accessed for looking up the npc
+# default: npc_display_name
+look_in:
+  - npc_display_name
+  - npc_tweaks_name
+  - npc_class_name
+  - npc_record_id_hash
+
+npc_voice: skippy
+
+# can be piper, kokoro, zonos
+npc_voice_engine: piper
+# for piper it is the onnx file
+# for kokoro it is the alias for the voice (see speak.py)
+# for zonos it is the asset alias
+npc_voice_arg: "/PATH/TO/PIPER_MODEL/en_US-norman-medium.onnx"
+# these are individual files / modes for the voice
+# this is an extension of npc_voice_arg if you want to set a specific voice
+# depending on the mood of the npc
+npc_joy: '' 
+npc_smile: ''
+npc_neutral: ''
+npc_sad: ''
+npc_surprise: ''
+npc_aggressive: ''
+npc_anger: ''
+npc_interested: ''
+npc_disinterested: ''
+npc_disappointed: ''
+npc_disgust: ''
+npc_exertion: ''
+npc_nervous: ''
+npc_fear: ''
+npc_terrified: ''
+npc_pain: ''
+npc_sleepy: ''
+npc_unconscious: ''
+npc_dead: ''
+
+# if a wiki file is listed inside of the folder
+# used for adding context to an npc (like backstory, relationship with v etc.), the sky is the limit
+wiki_name: "name_of_wiki_file"
+

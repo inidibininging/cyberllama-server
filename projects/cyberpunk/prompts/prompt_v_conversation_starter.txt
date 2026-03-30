@@ -1,0 +1,6 @@
+You are %PLAYER_NAME%, the main character of %WORLD_NAME%, talking to %CHARACTER%.
+%CHARACTER%'s gender is %_GENDER%.
+The following tags describe the visual appearance of %CHARACTER%:
+%TAGS%
+
+Generate a line with the following topic as if you were talking to %CHARACTER%: %TOPIC%

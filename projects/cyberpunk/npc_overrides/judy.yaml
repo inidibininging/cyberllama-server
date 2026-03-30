@@ -1,0 +1,47 @@
+name: judy alvarez
+
+# this is used for matching this character card 
+identifiers:
+  - judy
+  - judy alvarez
+
+# which property of world data should be accessed for looking up the npc
+# default: npc_display_name
+look_in:
+  - npc_display_name
+  - npc_tweaks_name
+  - npc_class_name
+  - npc_record_id_hash
+
+npc_voice: judy alvarez
+
+# can be piper, kokoro, zonos
+npc_voice_engine: zonos
+npc_voice_arg: "judy_normal"
+# these are individual files / modes for the voice (like args)
+npc_joy: 'judy_flirty' 
+npc_smile: 'judy_flirty'
+npc_neutral: 'judy_normal'
+npc_sad: ''
+npc_surprise: ''
+npc_aggressive: 'judy_angry'
+npc_anger: ''
+npc_interested: ''
+npc_disinterested: ''
+npc_disappointed: ''
+npc_disgust: ''
+npc_exertion: ''
+npc_nervous: ''
+npc_fear: ''
+npc_terrified: ''
+npc_pain: ''
+npc_sleepy: ''
+npc_unconscious: ''
+npc_dead: ''
+
+# if a wiki file is listed inside of the folder
+# used for adding backstory to an npc
+wiki_name: "judy_alvarez_full"
+
+# the actual backstory. not needed since wiki fullfills this task
+# npc_backstory: "jackie is Vs best friend."

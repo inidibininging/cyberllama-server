@@ -1,0 +1,189 @@
+world:
+  world_name: Cyberpunk
+  player_name: V
+
+
+# self explanatory
+# speech to text
+whisper:
+  enabled: false
+  url: "https://localhost:8091"
+
+ollama:
+  # this is actually for openapi / llamacpp compatible servers.
+  # tested llamacpp and it was not good since it spit out a lot of garbage.
+  # probably lack of skill setting up llamacpp properly
+  url: "http://localhost:11434/v1"
+
+  # this is for openai
+  # url: "http://127.0.0.1:11434/api/generate"
+
+  # model used for evaluating a screenshot of the desktop.
+  # tried to reduce it to make a screenshot of the window, but it didn't work.
+  # something that could be fixed 100% in the future.
+  # the game needs to be played in fullscreen
+  image: "llava:latest"
+
+  # main model. used for talking to npcs / npcs making comments etc.
+  model: "llama3.2:latest"
+
+  # llm used for rating the mood by what you say / respond
+  mood_eval_model:  "llama3.2:latest"
+
+  state_v_responses_model:  "llama3.2:latest"
+  
+  # model: "deepseek-r1:8b"
+  
+  # used for skipping the </think> tag of "thinking" models
+  thinking_model: false
+
+# enhances each of the npc dialog lines with a generated background story.
+# some models work better and are more consistent if the character has a "background".
+# having a background story is one extra prompt for each new npc. so it makes the query response in game slower
+generate_background_story: false
+
+# changes wether cyberllama fires an ollama query for each of the moods below (true)
+# or just once (false). setting it to false makes responses faster at the cost of accuracy (if the model you are using is ... stupid)
+generate_single_v_responses: false
+
+# v's responses (hopefully) should be in one of these "moods"
+generate_single_v_responses_moods:
+# - 'very positive'
+- 'optimistic or cheerful'
+- 'neutral'
+#- 'bored', 
+# - 'aggressive'
+- 'negative, depressing or careless'
+
+# define multiple engines for speaking npcs (for now kokoro, piper. extend as you wish)
+npc_tts: 
+  # - "kokoro"
+  - "piper"
+
+piper:
+  # uses GPU IF you get this to work
+  use_gpu: false
+  
+  # v's piper voice
+  # player_model: "/PATH/TO/PIPER_MODEL/v_test.onnx"
+  player_model: "/PATH/TO/PIPER_MODEL/v_m_player_model.onnx"
+
+  # voice used by the player
+  default_v_male: "/PATH/TO/PIPER_MODEL/v_m_player_model.onnx"
+  default_v_female: "/PATH/TO/PIPER_MODEL/v_f_player_model.onnx"
+
+  # if windows => your piper exe here
+  executable: "Scripts/piper.exe"
+
+  # voices used by npcs
+  female_voices:
+  - "/PATH/TO/PIPER_MODEL/en_US-amy-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-jenny_dioco-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-hfc_female-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-semaine-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-lessac-high.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-kristin-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-kathleen-low.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-amy-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-alba-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-ljspeech-high.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-cori-high.onnx"
+  male_voices:
+  - "/PATH/TO/PIPER_MODEL/en_GB-alan-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-joe-medium.onnx"  
+  - "/PATH/TO/PIPER_MODEL/en_US-danny-low.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-sam-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-northern_english_male-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-hfc_male-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_GB-southern_english_female-low.onnx"  
+  - "/PATH/TO/PIPER_MODEL/en_US-john-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-norman-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-reza_ibrahim-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-bryce-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-kusal-medium.onnx"
+  - "/PATH/TO/PIPER_MODEL/en_US-ryan-high.onnx"
+
+  # needs gender + speaker specification in order to use it correctly. libritts_r has approx 900 speakers. 
+  # needs a dataset metadata and mapping the p# of the onnx to the dataset gender + tags (relaxed, tense etc)
+  multi_voice:
+    libritts_r:
+      path: "/PATH/TO/PIPER_MODEL/en_US-libritts-high.onnx"
+      dataset: "./libritts_dataset"
+
+    # support for later
+  other:  
+  - "piper_models/en_US-l2arctic-medium.onnx"
+  - "piper_models/en_US-arctic-medium.onnx"
+  - "piper_models/en_GB-aru-medium.onnx"
+  - "piper_models/en_GB-vctk-medium.onnx"  
+
+zonos:
+  url: "https://localhost:8081/generate"
+  female_voices:
+  - "npc_female_0"
+  - "npc_female_1"
+  - "npc_female_2"
+  - "npc_female_3"
+  - "npc_female_4"
+  - "npc_female_5"
+  - "npc_female_6"
+  - "npc_female_7"
+  - "npc_female_8"
+  - "npc_female_9"
+  - "npc_female_10"
+  male_voices:
+  - "npc_male_0"
+  - "npc_male_1"
+  - "npc_male_2"
+  - "npc_male_3"
+  - "npc_male_4"
+  - "npc_male_5"
+  - "npc_male_6"
+  - "npc_male_7"
+  - "npc_male_8"
+  - "npc_male_9"
+  - "npc_male_10"
+  default_v_male: ""
+  default_v_female: ""
+
+kokoro:
+  model: "kokoro-v1.0.onnx"
+  # not used for now. I like piper for V, since it's ok, fast and doesn't use that much RAM.
+  # modify at will (lookup "def v_speak" in cyberllama)
+  default_v_male: ""
+  default_v_female: ""
+
+  voices_path: "voices-v1.0_new.bin"
+  # generic npc voices (should be generated on the fly / session / npc id)
+  female_voices:
+  - "af_bella"
+  - "af_heart"
+  - "af_alloy"
+  - "af_aoede"
+  - "af_bella"
+  - "af_jessica"
+  - "af_kore"
+  - "af_nicole"
+  - "af_nova"
+  - "af_river"
+  - "af_sarah"
+  - "af_sky"
+  male_voices:
+  - "am_adam"
+  - "am_echo"
+  - "am_eric"
+  - "am_fenrir"
+  - "am_liam"
+  - "am_michael"
+  - "am_onyx"
+  - "am_puck"
+  - "am_santa"
+
+db:
+  # set to false if you start cyberllama for the first time
+  initialized: true
+  path: "cyberllama.db"
+
+cache:
+  init_mood_lines: false
+  init_data: false
