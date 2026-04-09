@@ -1,4 +1,4 @@
-# cyberllama-client
+# cyberllama-client / cyberllama-cserver readme
 
 Frankensteinian proof-of-concept for talking NPCs and simple quest generation.
 
