@@ -208,3 +208,14 @@ __marimo__/
 
 # uncomment this if you dont like
 projects/cyberpunk/wiki/*
+lib64
+.gitignore
+*.pem
+bin/
+projects/cyberpunk/config.yaml
+cyberllama.db
+pyvenv.cfg
+.vscode/launch.json
+share/
+include/
+projects/cyberpunk/*.yaml
